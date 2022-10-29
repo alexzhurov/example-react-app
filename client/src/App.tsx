@@ -1,7 +1,13 @@
 import React, { Component, FormEventHandler } from 'react';
 import './App.css';
 
-class App extends Component {
+type AppState = {
+    response: string;
+    post: string;
+    responseToPost: string;
+};
+
+class App extends Component<{}, AppState> {
     state = {
         response: '',
         post: '',
@@ -23,9 +29,7 @@ class App extends Component {
         return body;
     };
 
-    // handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     handleSubmit: FormEventHandler = async (e) => {
-        // handleSubmit = async (e: MouseEvent) => {
         e.preventDefault();
         const response = await fetch('/api/world', {
             method: 'POST',
