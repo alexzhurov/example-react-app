@@ -1,4 +1,4 @@
-import React, { Component, FormEventHandler } from 'react';
+import { Component, FormEventHandler } from 'react';
 import './App.css';
 
 type AppState = {
